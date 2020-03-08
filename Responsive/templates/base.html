@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Technews</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/gijgo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/slick.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+  </head>
+  <body>
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <div class="logo">
+                                <a href="#">
+                                    <img src="{{ url_for('static', filename='img/technews.png') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="#">home</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Albums</a></li>
+                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="#">blog</a></li>
+                                                <li><a href="#">single-blog</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                    <li><a href="#">elements</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="social_links">
+                                <ul>
+                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider  d-flex align-items-center slider_bg_1 black_overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center ">
+                                <h3 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".1s" >This website changes the way you read newspapers <br>
+                                </h3>
+                                <div class="video_service_btn wow fadeInDown" data-wow-duration="1s" data-wow-delay=".1s">
+                                    <a href="#" class="boxed-btn3">See More Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+            <!-- {% for article in data%} -->
+            <div class="container-fluid p-0">
+                <div class="row no-gutters ">
+                    {% for article in data%}
+                    <div class="col-xl-4 col-md-4">
+                        
+                        <div class="single_photography">
+                            
+                            <div class="thumb">
+                                <img src="{{article.image_url}}" alt="" width="100%">
+                            </div>
+                            <a  href="{{article.link}}" class="hover ">
+                                <div class="hover_inner">
+                                    <h3>{{article.title}}</h3>
+                                    <span>{{article.description}}</span>
+                                </div>
+                            </a>
+                    
+                        </div>
+                    </div>
+                    {% endfor %}   
+                </div>
+            <!-- {% endfor %} -->
+            </div>
+        </div>
+        <!-- /gallery_area  -->
+    <!-- slider_area_end -->
+    <div class="team_area">
+        <div class="container">
+            <div class="border_bottom">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_team">
+                            <div class="team_thumb">
+                                <img src="static/img/team/3.png" alt="">
+                            </div>
+                            <div class="team_info text-center">
+                                <h3>Thomas Luu</h3>
+                                <p></p>
+                                <div class="social_link">
+                                    <ul>
+                                        <li><a href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_team">
+                            <div class="team_thumb">
+                                <img src="static/img/team/2.png" alt="">
+                            </div>
+                            <div class="team_info text-center">
+                                <h3>Kha Nguyen</h3>
+                                <!-- <p>Photographer</p> -->
+                                <div class="social_link">
+                                    <ul>
+                                        <li><a href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="single_team">
+                            <div class="team_thumb">
+                                <img src="static/img/team/1.png" alt="">
+                            </div>
+                            <div class="team_info text-center">
+                                <h3>Nguyet Vo</h3>
+                                <!-- <p>Photographer</p> -->
+                                <div class="social_link">
+                                    <ul>
+                                        <li><a href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /team_area  -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="static/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="static/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/isotope.pkgd.min.js"></script>
+    <script src="static/js/ajax-form.js"></script>
+    <script src="static/js/waypoints.min.js"></script>
+    <script src="static/js/jquery.counterup.min.js"></script>
+    <script src="static/js/imagesloaded.pkgd.min.js"></script>
+    <script src="static/js/scrollIt.js"></script>
+    <script src="static/js/jquery.scrollUp.min.js"></script>
+    <script src="static/js/wow.min.js"></script>
+    <script src="static/js/nice-select.min.js"></script>
+    <script src="static/js/jquery.slicknav.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/plugins.js"></script>
+    <script src="static/js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="static/js/contact.js"></script>
+    <script src="static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="static/js/jquery.form.js"></script>
+    <script src="static/js/jquery.validate.min.js"></script>
+    <script src="static/js/mail-script.js"></script>
+
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
